@@ -1,0 +1,36 @@
+javers:
+  mongodb:
+    host: localhost
+    port: 27017
+    database: javers
+    authentication-database: admin
+    username: root
+    password: rootpassword
+
+spring:
+  jpa:
+    show-sql: false
+    open-in-view: false
+    generate-ddl: true
+    properties:
+      #      hibernate:
+      #        generate_statistics: true
+      enable_lazy_load_no_trans: true
+      format_sql: true
+    hibernate:
+      ddl-auto: create-drop
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://161.97.118.20:5433/testdb
+    username: neka-app
+    password: 2802nK.1
+    hikari:
+      maximumPoolSize: 50
+      idleTimeout: 60000
+      maxLifetime: 180000
+server:
+  port: 8888
